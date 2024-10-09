@@ -108,7 +108,9 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void deleteJob(Job target) { addressBook.removeJob(target); }
+    public void deleteJob(Job target) {
+        addressBook.removeJob(target);
+    }
 
     @Override
     public void addPerson(Person person) {
