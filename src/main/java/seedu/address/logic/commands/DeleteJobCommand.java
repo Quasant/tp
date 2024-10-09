@@ -7,6 +7,7 @@ import java.util.List;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
+import seedu.address.logic.Mode;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.job.Job;
@@ -42,7 +43,8 @@ public class DeleteJobCommand extends Command {
 
         Job jobToDelete = lastShownList.get(targetIndex.getZeroBased());
         model.deleteJob(jobToDelete);
-        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(jobToDelete)));
+        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(jobToDelete)),
+                false,  false, Mode.JOB);
     }
 
     @Override
