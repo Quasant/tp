@@ -14,7 +14,7 @@ import seedu.address.model.job.Job;
 /**
  * Deletes a person identified using it's displayed index from the address book.
  */
-public class DeleteJobCommand extends DeleteCommand {
+public class DeleteJobCommand extends Command {
 
     public static final String COMMAND_WORD = "delete_job";
 
@@ -25,8 +25,10 @@ public class DeleteJobCommand extends DeleteCommand {
 
     public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Deleted Person: %1$s";
 
+    private final Index targetIndex;
+
     public DeleteJobCommand(Index targetIndex) {
-        super(targetIndex);
+        this.targetIndex = targetIndex;
     }
 
     @Override
@@ -50,11 +52,11 @@ public class DeleteJobCommand extends DeleteCommand {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof DeleteCommand)) {
+        if (!(other instanceof DeleteJobCommand)) {
             return false;
         }
 
-        DeleteCommand otherDeleteCommand = (DeleteCommand) other;
+        DeleteJobCommand otherDeleteCommand = (DeleteJobCommand) other;
         return targetIndex.equals(otherDeleteCommand.targetIndex);
     }
 
