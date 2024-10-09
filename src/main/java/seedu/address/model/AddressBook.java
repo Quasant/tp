@@ -117,6 +117,8 @@ public class AddressBook implements ReadOnlyAddressBook {
         persons.remove(key);
     }
 
+    public void removeJob(Job key) { jobs.remove(key); }
+
     //// util methods
 
     @Override

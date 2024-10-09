@@ -108,8 +108,7 @@ public class ModelManager implements Model {
     }
 
     @Override
-    // Todo: In a second PR when I add the deleteJob feature
-    public void deleteJob(Job target) {}
+    public void deleteJob(Job target) { addressBook.removeJob(target); }
 
     @Override
     public void addPerson(Person person) {
