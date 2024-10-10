@@ -60,7 +60,9 @@ public class Messages {
                 .append("; Salary: ")
                 .append(job.getSalary())
                 .append("; Requirements: ")
-                .append(job.getRequirements());
+                .append(job.getRequirements())
+                .append("; Description: ")
+                .append(job.getDescription());
         return builder.toString();
     }
 
